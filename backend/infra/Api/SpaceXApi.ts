@@ -13,8 +13,12 @@ export class SpaceXApi extends Axios implements Axios {
       baseURL: "https://api.spacexdata.com",
       responseType: "json",
     });
+    
     this.interceptors.response.use(
-      (value) => ({ ...value, data: JSON.parse(value.data) }),
+      (value) => ({
+        ...value,
+        data: value.status >= 200 && value.status < 300 ? JSON.parse(value.data) : null,
+      }),
       (error) => console.log("spaceX api error")
     );
   }
