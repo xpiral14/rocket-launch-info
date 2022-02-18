@@ -1,10 +1,21 @@
 {
   "compilerOptions": {
-    "target": "ES2019",
+    "target": "ES5",
     "module": "CommonJS",
+    "types": [
+      "reflect-metadata"
+    ],
+    "lib": [
+      "ES2019"
+    ],
     "rootDir": "./",
     "outDir": "./build",
     "esModuleInterop": true,
-    "strict": true
+    "strict": true,
+    "moduleResolution": "node",
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "paths": {
+    }
   }
 }

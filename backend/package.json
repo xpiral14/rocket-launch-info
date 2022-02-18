@@ -4,6 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
+    "@sailplane/injector": "^3.0.0",
+    "@sailplane/logger": "^3.0.0",
+    "axios": "^0.26.0",
+    "bottlejs": "1.7",
     "express": "^4.17.3"
   },
   "devDependencies": {
@@ -17,5 +21,5 @@
     "start-dev": "nodemon index.ts",
     "build": "tsc --project ./",
     "start-build": "node ./build"
-}
+  }
 }

@@ -1,0 +1,21 @@
+{
+    "compilerOptions": {
+        "paths": {
+            "@Bootstrap": [
+                "./bootstrap"
+            ],
+            "@Domain/*": [
+                "./app/Domain/*"
+            ],
+            "@Service/*": [
+                "./app/Service/*"
+            ],
+            "@Config/*": [
+                "./config/*"
+            ],
+            "@Infra/*": [
+                "./Infra/*"
+            ]
+        }
+    },
+}
