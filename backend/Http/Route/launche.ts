@@ -13,10 +13,15 @@ const launcheRoutes: Routes = {
     method: HTTPMethods.GET,
     name: "launche.latest",
   },
-  "/nexts": {
+  "/upcoming": {
     controller: () => Injector.get(LauncheControllers.GetUpcomingLaunchesController)!,
     method: HTTPMethods.GET,
     name: "launche.latest",
+  },
+  "/last": {
+    controller: () => Injector.get(LauncheControllers.GeLastLaunchesController)!,
+    method: HTTPMethods.GET,
+    name: "launche.last",
   },
 };
 

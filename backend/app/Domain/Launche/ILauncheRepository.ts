@@ -6,5 +6,5 @@ export default interface ILauncheRepository {
   nextLaunche(): Promise<Nullable<Launche>>;
   latestLaunche(): Promise<Nullable<Launche>>;
   upcomingLaunches(page: number, limit: number, populate?: string[]): Promise<PaginatedData<Launche>>;
-  pastLaunches(page: number, limit: number): Promise<Launche[]>;
+  lastLaunches(page: number, limit: number): Promise<PaginatedData<Launche>>;
 }

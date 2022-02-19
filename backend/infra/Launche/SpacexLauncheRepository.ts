@@ -47,10 +47,25 @@ class SpacexLauncheRepository implements ILauncheRepository {
     });
     return this.transformPaginationResponseAtPaginationDomain(response.data);
   }
-  async pastLaunches(page: number, limit: number) {
-    const { data } = await this.api.get("/launches/past");
 
-    return data ? data.map(this.mapResponseToLauncheDomain) : [];
+  async lastLaunches(page: number, limit: number) {
+    const body = {
+      query: {
+        date_utc: {
+          $lt: new Date().toJSON(),
+        },
+      },
+      options: {
+        page: page ?? this.DEFAULT_PAGE,
+        limit: limit ?? this.DEFAULT_ITEMS_PER_PAGE,
+        // populate: populate ?? [],
+        sort: {
+          date_utc: "desc",
+        },
+      },
+    };
+    const { data } = await this.api.post("/launches/query", body);
+    return this.transformPaginationResponseAtPaginationDomain(data);
   }
 
   private mapResponseToLauncheDomain = (launcheResponse: any) => {
