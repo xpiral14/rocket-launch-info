@@ -16,4 +16,11 @@ export default class Launche {
   get dateUtc(): Date {
     return this._dateUtc;
   }
+
+  toJSON() {
+    return {
+      id: this.id,
+      date_utc: this.dateUtc,
+    };
+  }
 }

@@ -7,15 +7,16 @@ import Provider from "./Provider";
 
 export default class IOCProvider extends Provider {
   container = Injector;
-
   boot() {
     this.container.registerFactory(
       "launcheRepository",
-      () => new SpacexLauncheRepository(new SpaceXApi().version(SpaceXApiVersion.V3))
+      () => new SpacexLauncheRepository(new SpaceXApi().version(SpaceXApiVersion.V4))
     );
     this.container.register(LaunchServices.GetNextLauncheService);
     this.container.register(LauncheControllers.GetNextLaunchController);
     this.container.register(LaunchServices.GetLatestLauncheService);
     this.container.register(LauncheControllers.GetLatestLauncheController);
+    this.container.register(LaunchServices.NextLaunchesService);
+    this.container.register(LauncheControllers.GetNextLaunchesController);
   }
 }

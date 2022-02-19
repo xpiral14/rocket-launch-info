@@ -1,18 +1,22 @@
 import { Injector } from "@sailplane/injector";
 import { Routes, HTTPMethods } from "./Route";
-import GetNextLaunchController from "../Controller/Launche/GetNextLauncheController";
-import GetLatestLauncheController from "../Controller/Launche/GetLatestLauncheController";
+import { LauncheControllers } from "../Controller";
 
 const launcheRoutes: Routes = {
   "/next": {
-    controller: () => Injector.get(GetNextLaunchController)!,
+    controller: () => Injector.get(LauncheControllers.GetNextLaunchController)!,
     method: HTTPMethods.GET,
     name: "launche.next",
   },
   "/latest": {
-    controller: () => Injector.get(GetLatestLauncheController)!,
+    controller: () => Injector.get(LauncheControllers.GetLatestLauncheController)!,
     method: HTTPMethods.GET,
-    name: 'launche.latest'
+    name: "launche.latest",
+  },
+  "/nexts": {
+    controller: () => Injector.get(LauncheControllers.GetNextLaunchesController)!,
+    method: HTTPMethods.GET,
+    name: "launche.latest",
   },
 };
 
