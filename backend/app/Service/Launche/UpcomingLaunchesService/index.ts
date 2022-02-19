@@ -7,7 +7,7 @@ export type NextLaunchesServiceCommand = {
   populate: string[];
 };
 
-export default class NextLaunchesService extends Service {
+export default class UpcomingLaunchesService extends Service {
   static readonly $inject = ["launcheRepository"];
 
   constructor(private launcheRepository: ILauncheRepository) {

@@ -16,7 +16,7 @@ export default class IOCProvider extends Provider {
     this.container.register(LauncheControllers.GetNextLaunchController);
     this.container.register(LaunchServices.GetLatestLauncheService);
     this.container.register(LauncheControllers.GetLatestLauncheController);
-    this.container.register(LaunchServices.NextLaunchesService);
-    this.container.register(LauncheControllers.GetNextLaunchesController);
+    this.container.register(LaunchServices.UpcomingLaunchesService);
+    this.container.register(LauncheControllers.GetUpcomingLaunchesController);
   }
 }

@@ -14,7 +14,7 @@ const launcheRoutes: Routes = {
     name: "launche.latest",
   },
   "/nexts": {
-    controller: () => Injector.get(LauncheControllers.GetNextLaunchesController)!,
+    controller: () => Injector.get(LauncheControllers.GetUpcomingLaunchesController)!,
     method: HTTPMethods.GET,
     name: "launche.latest",
   },
